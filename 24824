@@ -1,0 +1,162 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\91811> mongosh
+Current Mongosh Log ID: 66d3d37996ef3d516d2710bb
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0
+Using MongoDB:          7.0.14
+Using Mongosh:          2.3.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-08-30T10:15:21.300+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use newdata
+switched to db newdata
+newdata> show collections
+faculty
+new1
+new2
+student
+user1
+newdata> db.user1.insertOne({date:ISODate()})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66d3d3cf96ef3d516d2710bc')
+}
+newdata> db.user1.find()
+[
+  {
+    _id: ObjectId('66cebaa4fa78cd2f542710bc'),
+    name: 'ankur',
+    age: 28,
+    class: 'b9'
+  },
+  {
+    _id: ObjectId('66cebd49fa78cd2f542710bd'),
+    name: 'Karan Aujla',
+    age: 22,
+    marks: 85
+  },
+  {
+    _id: ObjectId('66cebd49fa78cd2f542710be'),
+    name: 'Navaan Sandhu',
+    age: 24,
+    marks: 92
+  },
+  {
+    _id: ObjectId('66cebd49fa78cd2f542710bf'),
+    name: 'Arjan dhillon',
+    age: 20,
+    marks: 78
+  },
+  {
+    _id: ObjectId('66cebd49fa78cd2f542710c0'),
+    name: 'Prem dhillon',
+    age: 23,
+    marks: 64
+  },
+  {
+    _id: ObjectId('66cebd49fa78cd2f542710c1'),
+    name: 'Babbu Maan',
+    age: 21,
+    marks: 88
+  },
+  {
+    _id: ObjectId('66cebf58fa78cd2f542710c2'),
+    name: 'John cena',
+    age: 22,
+    subject: 'c++',
+    rating: 4.5
+  },
+  {
+    _id: ObjectId('66cebf58fa78cd2f542710c3'),
+    name: 'Alice Smith',
+    age: 24,
+    subject: 'java',
+    rating: 4.8
+  },
+  {
+    _id: ObjectId('66cebf58fa78cd2f542710c4'),
+    name: 'Bob Johnson',
+    age: 20,
+    subject: 'DBMS',
+    rating: 4.2
+  },
+  {
+    _id: ObjectId('66cebf58fa78cd2f542710c5'),
+    name: 'Charlie Brown',
+    age: 23,
+    subject: 'BEE',
+    rating: 3.9
+  },
+  {
+    _id: ObjectId('66cebf58fa78cd2f542710c6'),
+    name: 'Diana Prince',
+    age: 21,
+    subject: 'Python',
+    rating: 4.7
+  },
+  {
+    _id: ObjectId('66cebf87fa78cd2f542710c7'),
+    name: 'Hindveer',
+    age: 22,
+    marks: 85
+  },
+  {
+    _id: ObjectId('66cebf87fa78cd2f542710c8'),
+    name: 'Harmeet',
+    age: 24,
+    marks: 92
+  },
+  {
+    _id: ObjectId('66cebf87fa78cd2f542710c9'),
+    name: 'Honey',
+    age: 20,
+    marks: 78
+  },
+  {
+    _id: ObjectId('66cebf87fa78cd2f542710ca'),
+    name: 'Harman',
+    age: 23,
+    marks: 64
+  },
+  {
+    _id: ObjectId('66cebf87fa78cd2f542710cb'),
+    name: 'spiddy',
+    age: 21,
+    marks: 88
+  },
+  {
+    _id: ObjectId('66d3d3cf96ef3d516d2710bc'),
+    date: ISODate('2024-09-01T02:39:11.647Z')
+  }
+]
+newdata>  db.user.findOne({id:"66cebf87fa78cd2f542710cb"})
+null
+newdata> db.user.findOne({name:"Hindveer"})
+null
+newdata> db.user1.findOne({name:"Hindveer"})
+{
+  _id: ObjectId('66cebf87fa78cd2f542710c7'),
+  name: 'Hindveer',
+  age: 22,
+  marks: 85
+}
+newdata>  db.user1.findOne({id:"66cebf87fa78cd2f542710cb"})
+null
+newdata> db.user1.findOne(ObjectId('"66cebf87fa78cd2f542710cb'))
+BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+newdata> db.user1.findOne(ObjectId("66cebf87fa78cd2f542710cb"))
+{
+  _id: ObjectId('66cebf87fa78cd2f542710cb'),
+  name: 'spiddy',
+  age: 21,
+  marks: 88
+}
+newdata>
