@@ -1,0 +1,82 @@
+C:\Users\jaikirat dev>mongosh
+Current Mongosh Log ID: 66cebd921ea7bc58f52710bb
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0
+Using MongoDB:          7.0.14
+Using Mongosh:          2.3.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2024-08-28T10:18:51.133+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use name
+switched to db name
+name> db.createCollection("new")
+{ ok: 1 }
+name> db.insertOne({name:"ankur", age:28, class:"b9"})
+TypeError: db.insertOne is not a function
+name> db.new.insertOne({name:"ankur", age:28, class:"b9"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66cebe0c1ea7bc58f52710bc')
+}
+name> db.new.insertMany([{ "name": "dksdf", "age": 40, "marks": 99, "sub": "eng" },)
+Uncaught:
+SyntaxError: Unexpected token (1:77)
+
+	⁠1 | db.new.insertMany([{ "name": "dksdf", "age": 40, "marks": 99, "sub": "eng" },)
+    |                                                                              ^
+  2 |
+
+name>     { "name": "ofdge", "age": 20, "marks": 80, "sub": "math" },
+...     { "name": "dfgae", "age": 30, "marks": 70, "sub": "dso" },
+...     { "name": "jjksd", "age": 50, "marks": 60, "sub": "dfgad" }]
+Uncaught:
+SyntaxError: Missing semicolon. (1:12)
+
+	⁠1 |     { "name": "ofdge", "age": 20, "marks": 80, "sub": "math" },
+    |             ^
+  2 |     { "name": "dfgae", "age": 30, "marks": 70, "sub": "dso" },
+  3 |     { "name": "jjksd", "age": 50, "marks": 60, "sub": "dfgad" }]
+  4 |
+
+name> db.new.insertMany([{ "name": "dksdf", "age": 40, "marks": 99, "sub": "eng" },)
+Uncaught:
+SyntaxError: Unexpected token (1:77)
+
+	⁠1 | db.new.insertMany([{ "name": "dksdf", "age": 40, "marks": 99, "sub": "eng" },)
+    |                                                                              ^
+  2 |
+
+name>     { "name": "ofdge", "age": 20, "marks": 80, "sub": "math" },
+...     { "name": "dfgae", "age": 30, "marks": 70, "sub": "dso" },
+...     { "name": "jjksd", "age": 50, "marks": 60, "sub": "dfgad" }]
+Uncaught:
+SyntaxError: Missing semicolon. (1:12)
+
+	⁠1 |     { "name": "ofdge", "age": 20, "marks": 80, "sub": "math" },
+    |             ^
+  2 |     { "name": "dfgae", "age": 30, "marks": 70, "sub": "dso" },
+  3 |     { "name": "jjksd", "age": 50, "marks": 60, "sub": "dfgad" }]
+  4 |
+
+name> db.new.insertMany([{ "name": "dksdf", "age": 40, "marks": 99, "sub": "eng" },
+...     { "name": "ofdge", "age": 20, "marks": 80, "sub": "math" },
+...     { "name": "dfgae", "age": 30, "marks": 70, "sub": "dso" },
+...     { "name": "jjksd", "age": 50, "marks": 60, "sub": "dfgad" }])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66cebecc1ea7bc58f52710bd'),
+    '1': ObjectId('66cebecc1ea7bc58f52710be'),
+    '2': ObjectId('66cebecc1ea7bc58f52710bf'),
+    '3': ObjectId('66cebecc1ea7bc58f52710c0')
+  }
+}
+name>
